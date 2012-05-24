@@ -14,17 +14,20 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  puts a
+  puts b
+  puts c
   a,b,c = [a,b,c].sort
   if (a + b) <= c 
     raise TriangleError 
-  elseif (a == 0 || b == 0 || c == 0)
+  elsif (a == 0 || b == 0 || c == 0)
     raise TriangleError 
-  elseif (a == b && b == c)
-    :equilateral
-  elseif (a == b || a == c || b == c)
-    :isosceles
+  elsif (a == b && b == c)
+    return :equilateral
+  elsif (a == b || a == c || b == c)
+    return :isosceles
   else
-    :scalene
+    return :scalene
   end
 end
 
